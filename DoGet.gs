@@ -46,14 +46,14 @@ function writeData_(i, state, last) {
   var dataValues = dataRange.getValues();
   Logger.log(dataValues);
   if (state === APPROVED_STATE) {
-    var rangeApprove = sheet.getRange(last, 5, 1, 1);
+    var rangeApprove = sheet.getRange(last, 9, 1, 1);
     Logger.log('rangeApprove: ' + rangeApprove.getA1Notation());
     rangeApprove.setValues([
       [emailsession + ' on: ' + dateForLogging]
     ]);
   }
   if (state === DENIED_STATE) {
-    var rangeDeny = sheet.getRange(last, 6, 1, 1);
+    var rangeDeny = sheet.getRange(last, 10, 1, 1);
     Logger.log('rangeDeny: ' + rangeDeny.getA1Notation());
     rangeDeny.setValues([
       [emailsession + ' on: ' + dateForLogging]
@@ -63,10 +63,10 @@ function writeData_(i, state, last) {
 
   var Email = dataValues[0][1];
   var Content = dataValues[0][2];
-  var StartDate = dataValues[0][8];
-  var EndDate =dataValues[0][9];
-  var Reason = dataValues[0][10];
-  var MoreInfo = dataValues[0][11];
+  var StartDate = dataValues[0][3];
+  var EndDate =dataValues[0][4];
+  var Reason = dataValues[0][5];
+  var MoreInfo = dataValues[0][6];
 
   reviewContent_(
   Email,
@@ -80,8 +80,3 @@ function writeData_(i, state, last) {
  state
   );
 }
-
-
-
-
-

@@ -33,12 +33,12 @@ Logger.log('uri: '+scriptUri);
 // Append results in the Google Sheet
 var array = [ [
   Uuid, "NA", "NA",
-'=HYPERLINK("'+scriptUri+'?i="&ROW()&"&state=APPROVED&last="&ROW(),"Approve")',
-'=HYPERLINK("'+scriptUri+'?i="&ROW()&"&state=DENIED&last="&ROW(),"Deny")',
+'=HYPERLINK("'+scriptUri+'?i='+Uuid+'&state=APPROVED&last="&ROW(),"Approve")',
+'=HYPERLINK("'+scriptUri+'?i='+Uuid+'&state=DENIED&last="&ROW(),"Deny")',
 ] ]
 Logger.log('array to be inserted in the Sheet last: '+array);
 // insert colum 4
-var newRange = sh.getRange(last,4,1,5);
+var newRange = sh.getRange(last,8,1,5);
 Logger.log(newRange.getA1Notation());
 newRange.setValues(array);
 reviewContent_(
@@ -52,9 +52,3 @@ reviewContent_(
   MoreInfo
   ); // TemplateEmail + Recipients settings 
 }
-
-
-
-
-
-
