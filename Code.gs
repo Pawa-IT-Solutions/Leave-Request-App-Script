@@ -14,6 +14,17 @@
  * Author: Vincent M
 */
 
+/**
+ * Add custom menu items when opening the sheet.
+ */
+function onOpen() {
+  SpreadsheetApp.getUi()
+      .createMenu('Time off')
+      .addItem('Form setup', 'formSetup')
+      .addItem('Column setup', 'columnSetup')
+      .addToUi();
+}
+
 function autoFillGoogleDocFromForm(e) {
 // assume it's the first sheet where the data is collected
 var sh = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
