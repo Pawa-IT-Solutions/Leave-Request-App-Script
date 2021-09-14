@@ -40,7 +40,7 @@ function reviewContent_(Requesteremail, RequestContent, Uuid, Last, StartDate, E
       to: APPROVER_EMAIL,
       // cc: Session.getEffectiveUser().getEmail(),
       // bcc: Session.getEffectiveUser().getEmail(),
-      subject: "[New Request] New moderation request",
+      subject: "[New Leave Request] New Leave request for Review from: " + Requesteremail,
       htmlBody: message
     });
   }
@@ -52,7 +52,7 @@ function reviewContent_(Requesteremail, RequestContent, Uuid, Last, StartDate, E
     MailApp.sendEmail({
       to: Requesteremail,
       // cc: Session.getEffectiveUser().getEmail(),
-      subject: "[Request - Approval workflow] Request Approved",
+      subject: "[Leave request] Request Approved",
       htmlBody: message
     });
 
@@ -112,7 +112,3 @@ function createEvent(calendar_id, StartDate, EndDate) {
 
 
 }
-
-
-
-

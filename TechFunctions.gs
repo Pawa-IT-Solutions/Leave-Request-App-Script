@@ -7,7 +7,7 @@
  */
 function approveURI_(scriptUri, Uuid, state, last){
  return scriptUri + "?i=" + Uuid + '&state=' + APPROVED_STATE + '&last=' + last ;
-}
+} 
 /**
  * Create Deny URI
  * param {string}: Script URI
